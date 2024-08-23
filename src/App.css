@@ -1,38 +1,255 @@
-.App {
+@charset "UTF-8";
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-size: 'Arial', Helvetica, sans-serif;
+}
+
+html,body{
+  height:100%;
+  background-color:#eeeeee;
+}
+
+.center{
+  display:flex;
+  margin:0 auto;
+  max-width:1280px;
+  padding:0 2%;
+}
+
+.header{
+  padding:15px 0;
+  background-color:#fff;
+  border-bottom:2px solid #ccc;
+}
+
+.header__logo{
+  width:50%;
+}
+
+.header__loginForm{
+  width:50%;
+  text-align: right;
+}
+
+.header__loginForm form{
+  display:inline-block;
+}
+
+.header__loginForm input[type=email], .header__loginForm input[type=password], .formCriarConta input[type=text], .formCriarConta input[type=email], .formCriarConta input[type=password]{
+  outline:0;
+  border:1px solid #ccc;
+  margin-right:4px;
+  padding: 5px;
+}
+
+.header__loginForm input[type="submit"]{
+  outline:0;
+  border:1px solid #0095de;
+  background-color: #0095f6;
+  color:#fff;
+  padding:5px 10px;
+  cursor:pointer;
+}
+
+.header__loginForm__criarConta{
+  display:inline-block;
+}
+
+.header__loginForm__criarConta a{
+  text-decoration: none;
+  margin-left: 8px;
+  background-color:#0095f6;
+  color:#fff;
+  font-size: 14px;
+  padding:5px 10px;
+}
+
+.header__userLogado{
+  width:50%;
+  text-align: right;
+}
+
+.header__userLogado span{
+  
+}
+
+.header__userLogado a{
+  margin:0 12px;
+  text-decoration: none;
+  background-color: #0095f6;
+  color:#fff;
+  padding:3px 10px;
+  cursor:pointer;
+}
+
+.header__userLogado button{
+  outline:0;
+  border:0;
+  background-color:transparent;
+  color: #0095f6;
+  font-size: 16px;
+  cursor:pointer;
+}
+
+/* Criação da Modal Criar Conta */
+
+.modalCriarConta{
+  display:none;
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+}
+
+.formCriarConta{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:80%;
+  max-width:700px;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius:8px;
+  padding:20px;  
+}
+
+.fecharCriarConta{
+  position:absolute;
+  top:10px;
+  left:20px;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.formCriarConta h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formCriarConta input[type=text], .formCriarConta input[type=email], .formCriarConta input[type=password]{
+  display: block;
+  width:80%;
+  margin:15px auto;
+}
+
+.formCriarConta input[type="submit"]{
+  display: block;
+  width:80%;
+  margin:15px auto;
+  outline:0;
+  border:1px solid #0095de;
+  background-color: #0095f6;
+  color:#fff;
+  padding:8px 10px;
+  cursor:pointer;
+}
+
+/* Criação Modal Upload de Postagem */
+
+.modalUploadPost{
+  display:none;
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+}
+
+.formUploadPost{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:80%;
+  max-width:700px;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius:8px;
+  padding:20px;  
+}
+
+.formUploadPost h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formUploadPost input{
+  display: block;
+  width:80%;
+  margin:15px auto;
+  outline:0;
+  border:1px solid #ccc;
+  padding: 5px;
+}
+
+.formUploadPost input[type="submit"]{
+  display: block;
+  width:80%;
+  margin:15px auto;
+  outline:0;
+  border:1px solid #0095de;
+  background-color: #0095f6;
+  color:#fff;
+  padding:8px 10px;
+  cursor:pointer;
+}
+
+.fecharUploadPost{
+  position:absolute;
+  top:10px;
+  left:20px;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.containerProgress{
+  margin:0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+progress{
+  width: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Criação Posts Single */
+
+.post-single{
+  max-width: 700px;
+  margin:10px auto;
+  background-color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.post-single img{
+  width:100%;
 }
 
-.App-link {
-  color: #61dafb;
+.post-single p{
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.post-single form{
+  padding: 5px;
+}
+
+.post-single textarea{
+  outline:0;
+  width:100%;
+  height:80px;
+  padding:6px;
+  resize:vertical;
+  border:1px solid #ccc;
+}
+
+.post-single input[type=submit]{
+  display: block;
+  outline:0;
+  border:1px solid #0095de;
+  background-color: #0095f6;
+  color:#fff;
+  padding:8px 10px;
+  cursor:pointer;
 }
